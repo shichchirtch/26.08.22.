@@ -2,16 +2,16 @@ class Player:
     def __init__(self, name, old, scores):
         self.name, self.old, self.scores = name, old, scores
 
-    # def __len__(self):
-    #     print("__len__")
-    #     return 1 if self.scores > 0 else 0
+    def __len__(self):
+        print("__len__")
+        return 1 if self.scores > 0 else 0
     def __str__(self):
         return f'{self.name}; {self.old}; {self.scores}'
     def __bool__(self):
         print("__bool__")
         return bool(self.scores)
 
-
+players_filtered = list(filter(None, players))
 
 lst_in = ['Балакирев; 34; 2048',
 'Mediel; 27; 0',
@@ -27,7 +27,7 @@ a = players[0]
 print(bool(a))
 # print("len x = ", len(a))
 
-players_filtered = list(filter(bool, players))
+players_filtered = list(filter(None, players))
 print(players_filtered)
 for x in players_filtered:
     print(x)
